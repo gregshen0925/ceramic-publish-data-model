@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@glazed/cli": "^0.2.2"
+  }
+}
