@@ -4,7 +4,7 @@
     "title": "Tind3rUsers",
     "required": [
         "name",
-        "description"
+        "info"
     ],
     "additionalProperties": false,
     "properties": {
@@ -13,7 +13,7 @@
             "description": "User name",
             "default": ""
         },
-        "description": {
+        "info": {
             "type": "string",
             "description": "Your description",
             "default": ""

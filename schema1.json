@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "Dick",
+    "required": [
+        "counts",
+        "userInfo"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "counts": {
+            "type": "integer",
+            "description": "The total appliers",
+            "default": 0
+        },
+        "userInfo": {
+            "type": "array",
+            "default": [],
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "description"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "User name",
+                        "default": ""
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Introduce yourself",
+                        "default": ""
+                    },
+                    "wallets": {
+                        "type": "array",
+                        "description": "Collection of the contacts wallet addresses and respective networks",
+                        "default": [],
+                        "items": {
+                            "type": "object",
+                            "default": {},
+                            "required": [
+                                "walletAddress",
+                                "network"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "walletAddress": {
+                                    "type": "string",
+                                    "default": ""
+                                },
+                                "network": {
+                                    "type": "string",
+                                    "default": ""
+                                }
+                            }
+                        }
+                    },
+                    "avatar": {
+                        "type": "string",
+                        "description": "URI of user avatar",
+                        "default": ""
+                    },
+                    "tags": {
+                        "type": "array",
+                        "description": "Optional tags for the user",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "data": {
+                        "type": "object",
+                        "description": "Fields to include optional arbitrary data",
+                        "properties": {}
+                    }
+                }
+            }
+        }
+    }
+}

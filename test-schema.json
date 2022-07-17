@@ -4,7 +4,8 @@
     "title": "Tind3rUsers",
     "required": [
         "counts",
-        "userInfo"
+        "name",
+        "description"
     ],
     "additionalProperties": false,
     "properties": {
@@ -13,72 +14,73 @@
             "description": "The total appliers of Tind3r",
             "default": 0
         },
-        "userInfo": {
+        "name": {
+            "type": "string",
+            "description": "User name",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "description": "Bio",
+            "default": ""
+        },
+        "wallets": {
             "type": "array",
+            "description": "Collection of the contacts wallet addresses and respective networks",
             "default": [],
             "items": {
                 "type": "object",
+                "default": {},
                 "required": [
-                    "name",
-                    "wallets"
+                    "walletAddress",
+                    "network"
                 ],
                 "additionalProperties": false,
                 "properties": {
-                    "name": {
+                    "walletAddress": {
                         "type": "string",
-                        "description": "User name",
                         "default": ""
                     },
-                    "description": {
+                    "network": {
                         "type": "string",
-                        "description": "Bio",
                         "default": ""
-                    },
-                    "wallets": {
-                        "type": "array",
-                        "description": "Collection of the contacts wallet addresses and respective networks",
-                        "default": [],
-                        "items": {
-                            "type": "object",
-                            "default": {},
-                            "required": [
-                                "walletAddress",
-                                "network"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                                "walletAddress": {
-                                    "type": "string",
-                                    "default": ""
-                                },
-                                "network": {
-                                    "type": "string",
-                                    "default": ""
-                                }
-                            }
-                        }
-                    },
-                    "avatar": {
-                        "type": "string",
-                        "description": "URI of user avatar",
-                        "default": ""
-                    },
-                    "tags": {
-                        "type": "array",
-                        "description": "Optional tags for the user",
-                        "items": {
-                            "type": "string"
-                        },
-                        "minItems": 1,
-                        "uniqueItems": true
-                    },
-                    "data": {
-                        "type": "object",
-                        "description": "Fields to include optional arbitrary data",
-                        "properties": {}
                     }
                 }
             }
+        },
+        "avatar": {
+            "type": "string",
+            "description": "URI of user avatar",
+            "default": ""
+        },
+        "birthday": {
+            "type": "string",
+            "description": "birthday",
+            "default": ""
+        },
+        "gender": {
+            "type": "string",
+            "description": "gender",
+            "default": ""
+        },
+        "sexOrientation": {
+            "type": "string",
+            "description": "sex orientation",
+            "default": ""
+        },
+        "tags": {
+            "type": "array",
+            "description": "Optional tags for the user",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "data": {
+            "type": "object",
+            "description": "Fields to include optional arbitrary data",
+            "properties": {}
         }
     }
 }
